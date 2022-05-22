@@ -2,16 +2,11 @@
 let numToConvert = document.getElementById("num-to-convert").innerText;
 // Convert string to float
 numToConvert = parseFloat(numToConvert)
-// Grab ids of text to change
-let metersInFeet = document.getElementById("meters-in-feet")
 
 let num = document.getElementsByClassName("num")
 for (var i = 0; i < num.length; i++) {
     num[i].textContent = numToConvert
 }
-
-console.log(num)
-
 
 // Conversion functions
 function metersToFeet() {
@@ -44,15 +39,13 @@ function poundsToKilograms() {
     return Math.round(kilograms*1000)/1000
 }
 
-//function to change all "num"
-
+//convert on page load
 function pageLoad() {
-    document.getElementById("meters-in-feet").textContent = metersToFeet()
-    document.getElementById("feet-in-meters").textContent = feetToMeters()
-    document.getElementById("liters-in-gallons").textContent = litersToGallons()
-    document.getElementById("gallons-in-liters").textContent = gallonsToLiters()
-    document.getElementById("kilograms-in-pounds").textContent = kilogramsToPounds()
-    document.getElementById("pounds-in-kilograms").textContent =  poundsToKilograms()
+    document.getElementById("meters-conversion").textContent = numToConvert + " meters = " + metersToFeet() + " feet | " + numToConvert + " feet = " + feetToMeters() + " meters"
+    
+    document.getElementById("liters-conversion").textContent = numToConvert + " liters = " + litersToGallons() + " gallons | " + numToConvert + " gallons = " + gallonsToLiters() + " liters"
+    
+    document.getElementById("kilograms-conversion").textContent = numToConvert + " kilograms = " + kilogramsToPounds() + " pounds | " + numToConvert + " pounds = " + poundsToKilograms() + " kilograms"
 }
 
 // Call functions on pageload
