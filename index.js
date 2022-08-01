@@ -20,12 +20,12 @@ function feetToMeters() {
 }
 
 function litersToGallons() {
-    let gallons = numToConvert / 4.546
+    let gallons = numToConvert * 0.264
     return Math.round(gallons*1000)/1000
 }
 
 function gallonsToLiters() {
-    let liters = numToConvert * 4.546
+    let liters = numToConvert / 4.546
     return Math.round(liters*1000)/1000
 }
 
