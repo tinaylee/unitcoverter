@@ -25,7 +25,7 @@ function litersToGallons() {
 }
 
 function gallonsToLiters() {
-    let liters = numToConvert / 4.546
+    let liters = numToConvert / 0.264
     return Math.round(liters*1000)/1000
 }
 
